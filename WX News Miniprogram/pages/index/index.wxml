@@ -1,13 +1,14 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class="topbar">
+    <image class="icon" src='/images/news-tencent.png'></image>
+    <view>快讯 | 资讯</view>
 </view>
+
+    <view class="news-types">
+        <view>国内</view>
+        <view>国际</view>
+        <view>财经</view>
+        <view>娱乐</view>
+        <view>军事</view>
+        <view>体育</view>
+        <view>其他</view>
+    </view>
