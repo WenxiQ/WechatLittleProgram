@@ -4,7 +4,10 @@ const app = getApp()
 
 Page({
   data: {
-    newsTab: ['国内', '国际', '财经', '娱乐', '军事', '体育', '其他']
+     array: [{mode: 'scaleToFill'}],
+     newsTab: ['国内', '国际', '财经', '娱乐', '军事', '体育', '其他'],
+     frontpageHeading: ['新浪网新闻中心是新浪网最重要的频道之一，24小时滚动报道国内、国际及社会新闻。'],
+     
    }
   ,
   //事件处理函数
