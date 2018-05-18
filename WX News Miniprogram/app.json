@@ -10,6 +10,6 @@
     "navigationBarTitleText": "快读 | 资讯",
     "navigationBarTextStyle":"white",
     "navigationStyle":"custom",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   }
 }

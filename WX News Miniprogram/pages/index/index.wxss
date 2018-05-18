@@ -69,29 +69,38 @@
 .frontpage-heading {
    position: absolute;
    display: table-row;
-   padding-top: 300rpx;
-   padding-left: 40rpx;
-   padding-right: 40rpx;
+   padding-top: 270rpx;
+   padding-left: 70rpx;
+   padding-right: 70rpx;
    font-size: 30rpx;
    font-weight: bold;
    line-height: 42rpx;
-   color: white;
+   color: whitesmoke;
 }
 .heading-source {
    padding: 10rpx;
-   font-size: 20rpx;
-   line-height: 28rpx;
+   font-size: 25rpx;
+   line-height: 30rpx;
    color:gainsboro;
 }
 
-.test {
+.headline-list {
    display: flex;
+   height: 100%;
 }
 
-.test-scroll {
+.headline-items {
    display: flex;
-   width: 120rpx;
-   padding: 20rpx;
-   flex-shrink: 0;
+   height: 100%;
    flex-direction: column;
-   }
+   width: 130rpx;
+   font-size: 36rpx;
+   line-height: 42rpx;
+   flex-shrink: 0;
+}
+
+.swiper-format {
+   display: flex;
+   justify-content:space-around;
+   background-color: greenyellow;
+}
