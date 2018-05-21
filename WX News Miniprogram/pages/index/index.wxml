@@ -1,59 +1,35 @@
-
+<!--使用自定义导航栏-->
    <view class="topbar">
       <image class="icon" src='/images/news-tencent.png'></image>
       <view>快讯 | 资讯</view>
    </view>
-
+<!--头部新闻分类 当前激活颜色判断-->
    <view class="news-list">
-         <view wx:for="{{newsList}}" 
+         <view wx:for="{{newsList}}"  class="nltype {{nltype.key === activeType ? 'active' : '' }}" 
             wx:for-item="nltype" wx:key="{{key}}"
             data-nltype="{{nltype.key}}"
-            bindtap="switchNewsType"> {{nltype.name}}
+            bindtap="switchNewsType" > {{nltype.name}}
          </view>
    </view>
 
+<!--获取新闻列表 热门首图-->
    <view class="frontpage-wrapper"> 
          <view class="hot-icon">热门</view>
          <view class="frontpage-heading">{{newsResults[0].newsTitle}}
-            <view class="heading-source">{{newsResults[0].newsDate}}</view>
+            <view class="heading-source">{{newsResults[0].newsSource}} {{newsResults[0].newsDate}}
+         </view>
          </view>
          <image class="frontpage-image" 
                      src='{{newsResults[0].imagePath}}' mode="scaleToFill"></image>
          <image class="frontpage-bg" src='/images/background.jpg' mode="scaleToFill"></image>
    </view>
-
+<!--获取新闻列表 文章列表-->
 <scroll-view>
-         <view class="news-item" wx:for="{{newsResults}}" wx:if="{{index>0}}">
-               <view class= 'news-title'>{{item.newsTitle}}
-                  <view class= 'news-source'>{{item.newsSource}}</view>
-               </view>
-               <image class= 'news-small-image' src='{{item.imagePath}}'></image>
-         </view>
-</scroll-view>
-
-
-      <view class="frontpage-wrapper"> 
-         <view class="hot-icon">热门</view>
-         <view class="frontpage-heading">{{frontpageHeading}}
-            <view class="heading-source">source time</view>
-         </view>
-         <image class="frontpage-image" 
-                     src='/images/news-image.jpg' mode="scaleToFill"></image>
-         <image class="frontpage-bg" src='/images/background.jpg' mode="scaleToFill"></image>
-      </view>
-
-<!-- <swiper indicator-dots="{{indicatorDots}}"
-   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height: 200px" >
-   <block wx:for="{{imgUrls}}">
-      <swiper-item class="swiper-format">
-         <image src="{{item}}" class="slide-image" mode="scallToFill"></image>
-      </swiper-item>
-   </block>
-</swiper>
--->
-
- <scroll-view scroll-x="true" style="height: 200px">
-      <view class='headline-list'>
-         <view class='headline-items' wx:for="{{[1,2,3,4,5,6,7,8,9]}}">{{item}} </view>
+      <view class="news-item" wx:for="{{newsResults}}" wx:if="{{index>0}}">
+            <view class= 'news-title'>{{item.newsTitle}}
+               <view class= 'news-source'>{{item.newsSource}}</view>
+               <view class= 'news-source'>{{item.newsDate}}</view>
+            </view>
+            <image class= 'news-small-image' src='{{item.imagePath}}'></image>
       </view>
 </scroll-view>

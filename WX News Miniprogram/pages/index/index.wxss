@@ -20,13 +20,22 @@
   background-color: #00B2EE;
   color: whitesmoke;
   font-size: 30rpx;
-  line-height: 42rpx;
+  line-height: 45rpx;
   padding-left: 30rpx;
   padding-right:30rpx;
   display: flex;
   flex-wrap: wrap ;
   justify-content: space-between;
 }
+.nltype {
+   color: white;
+   padding-bottom: 20rpx;
+}
+.nltype.active {
+   color: yellow;
+   font-weight: bold;
+}
+
 .frontpage-wrapper {
    position: relative;
    width: 750rpx;
@@ -63,15 +72,26 @@
    background-color: red;
 }
 .frontpage-heading {
+   width: 680rpx;
    position: absolute;
    display: table-row;
-   padding-top: 280rpx;
-   padding-left: 50rpx;
-   padding-right: 50rpx;
+   padding-top: 300rpx;
+   padding-left: 40rpx;
    font-size: 28rpx;
    font-weight: bold;
-   line-height: 32rpx;
-   color: whitesmoke;
+   line-height: 30rpx;
+   color: white;
+}
+.heading-source {
+   padding: 10rpx;
+   font-size: 25rpx;
+   line-height: 30rpx;
+   color:gainsboro;
+}
+.heading-date {
+   font-size: 25rpx;
+   line-height: 30rpx;
+   color:gainsboro;
 }
 .news-item {
    width: 700rpx;
@@ -82,17 +102,19 @@
 .news-title {
    width: 450rpx;
    font-size: 30rpx;
+   font-weight: bold;
    line-height: 42rpx;
    padding-right: 20rpx;
 }
 .news-source {
-   margin-top: 20rpx;
-   font-size: 26rpx;
+   display: flex;
+   margin-top: 10rpx;
+   font-size: 25rpx;
    line-height: 30rpx;
 }
 .news-small-image {
    width:250rpx;
-   height: 150rpx;
+   height: 160rpx;
 }
 
 
@@ -100,38 +122,3 @@
 
 
 
-.heading-source {
-   padding: 10rpx;
-   font-size: 25rpx;
-   line-height: 30rpx;
-   color:gainsboro;
-}
-
-
-
-
-
-
-
-
-
-.headline-list {
-   display: flex;
-   height: 100%;
-}
-
-.headline-items {
-   display: flex;
-   height: 100%;
-   flex-direction: column;
-   width: 130rpx;
-   font-size: 36rpx;
-   line-height: 42rpx;
-   flex-shrink: 0;
-}
-
-.swiper-format {
-   display: flex;
-   justify-content:space-around;
-   background-color: greenyellow;
-}
