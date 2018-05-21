@@ -3,8 +3,13 @@
       <image class="icon" src='/images/news-tencent.png'></image>
       <view>快讯 | 资讯</view>
    </view>
-   <view class="news-types">
-      <view wx:for="{{newsTab}}">{{item}}</view>
+
+   <view class="news-list">
+         <view wx:for="{{newsList}}" 
+            wx:for-item="nltype" wx:key="{{key}}"
+            data-nltype="{{nltype.key}}"
+            bindtap="switchNewsType"> {{nltype.name}}
+         </view>
    </view>
 
       <view class="frontpage-wrapper"> 
@@ -12,22 +17,40 @@
          <view class="frontpage-heading">{{frontpageHeading}}
             <view class="heading-source">source time</view>
          </view>
-         <image class="frontpage-image" src='/images/news-image.jpg' mode="scaleToFill"></image>
+         <image class="frontpage-image" 
+                     src='/images/news-image.jpg' mode="scaleToFill"></image>
          <image class="frontpage-bg" src='/images/background.jpg' mode="scaleToFill"></image>
       </view>
 
-<swiper indicator-dots="{{indicatorDots}}"
+<scroll-view scroll-x>
+         <view class="news-item" wx:for="{{newsResults}}">
+               <view class= 'news-title'>{{item.newsTitle}}</view>
+               <image class= 'news-small-image' src='{{item.imagePath}}'></image>
+               <view class= 'news-source'>{{item.newsSource}}</view>
+         </view>
+</scroll-view>
+
+
+      <view class="frontpage-wrapper"> 
+         <view class="hot-icon">热门</view>
+         <view class="frontpage-heading">{{frontpageHeading}}
+            <view class="heading-source">source time</view>
+         </view>
+         <image class="frontpage-image" 
+                     src='/images/news-image.jpg' mode="scaleToFill"></image>
+         <image class="frontpage-bg" src='/images/background.jpg' mode="scaleToFill"></image>
+      </view>
+
+<!-- <swiper indicator-dots="{{indicatorDots}}"
    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height: 200px" >
    <block wx:for="{{imgUrls}}">
       <swiper-item class="swiper-format">
          <image src="{{item}}" class="slide-image" mode="scallToFill"></image>
-               <view class="frontpage-heading">{{frontpageHeading}}
-                  <view class="heading-source">source time</view>
-               </view>
       </swiper-item>
    </block>
 </swiper>
- 
+-->
+
  <scroll-view scroll-x="true" style="height: 200px">
       <view class='headline-list'>
          <view class='headline-items' wx:for="{{[1,2,3,4,5,6,7,8,9]}}">{{item}} </view>

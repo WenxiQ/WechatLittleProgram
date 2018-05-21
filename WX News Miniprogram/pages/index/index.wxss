@@ -16,7 +16,7 @@
   height: 50rpx;
   margin-right: 20rpx;
 }
-.news-types {
+.news-list {
   background-color: #00B2EE;
   color: whitesmoke;
   font-size: 30rpx;
