@@ -63,26 +63,57 @@
    background-color: red;
 }
 .frontpage-heading {
-   padding-top: 200rpx;
-   padding-left: 30rpx;
-}
-.frontpage-heading {
    position: absolute;
    display: table-row;
-   padding-top: 270rpx;
-   padding-left: 70rpx;
-   padding-right: 70rpx;
-   font-size: 30rpx;
+   padding-top: 280rpx;
+   padding-left: 50rpx;
+   padding-right: 50rpx;
+   font-size: 28rpx;
    font-weight: bold;
-   line-height: 42rpx;
+   line-height: 32rpx;
    color: whitesmoke;
 }
+.news-item {
+   width: 700rpx;
+   padding: 20rpx;
+   display: flex;
+   justify-content: center;
+}
+.news-title {
+   width: 450rpx;
+   font-size: 30rpx;
+   line-height: 42rpx;
+   padding-right: 20rpx;
+}
+.news-source {
+   margin-top: 20rpx;
+   font-size: 26rpx;
+   line-height: 30rpx;
+}
+.news-small-image {
+   width:250rpx;
+   height: 150rpx;
+}
+
+
+
+
+
+
 .heading-source {
    padding: 10rpx;
    font-size: 25rpx;
    line-height: 30rpx;
    color:gainsboro;
 }
+
+
+
+
+
+
+
+
 
 .headline-list {
    display: flex;

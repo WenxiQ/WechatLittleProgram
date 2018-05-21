@@ -12,21 +12,22 @@
          </view>
    </view>
 
-      <view class="frontpage-wrapper"> 
+   <view class="frontpage-wrapper"> 
          <view class="hot-icon">热门</view>
-         <view class="frontpage-heading">{{frontpageHeading}}
-            <view class="heading-source">source time</view>
+         <view class="frontpage-heading">{{newsResults[0].newsTitle}}
+            <view class="heading-source">{{newsResults[0].newsDate}}</view>
          </view>
          <image class="frontpage-image" 
-                     src='/images/news-image.jpg' mode="scaleToFill"></image>
+                     src='{{newsResults[0].imagePath}}' mode="scaleToFill"></image>
          <image class="frontpage-bg" src='/images/background.jpg' mode="scaleToFill"></image>
-      </view>
+   </view>
 
-<scroll-view scroll-x>
-         <view class="news-item" wx:for="{{newsResults}}">
-               <view class= 'news-title'>{{item.newsTitle}}</view>
+<scroll-view>
+         <view class="news-item" wx:for="{{newsResults}}" wx:if="{{index>0}}">
+               <view class= 'news-title'>{{item.newsTitle}}
+                  <view class= 'news-source'>{{item.newsSource}}</view>
+               </view>
                <image class= 'news-small-image' src='{{item.imagePath}}'></image>
-               <view class= 'news-source'>{{item.newsSource}}</view>
          </view>
 </scroll-view>
 
