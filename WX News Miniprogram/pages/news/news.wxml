@@ -1,2 +1,19 @@
-<!--pages/news/news.wxml-->
-<text>pages/news/news.wxml</text>
+<!--使用自定义导航栏-->
+   <view class="nav-bar">
+      <image class="back-icon" src='/images/back-arrow.jpg' bindtap="returnToList"></image>
+      <view class = "nav-text">快读 | 资讯</view>
+   </view>
+
+<!--新闻标题-->
+<view class="title-container">
+      <view class="title">{{newsDetail[0].title}}</view>
+      <view class="source-container">
+            <view class="source">{{newsDetail[0].source}} {{newsDetail[0].time}}  </view>
+            <view>{{newsDetail[0].count}}</view>
+      </view>
+</view>
+<!--详情列表-->
+<view class="content-container">
+      <view class="news-text">新闻正文 </view>
+      <image class="news-image" src='/images/image-icon.png'></image>
+</view>

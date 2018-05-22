@@ -83,6 +83,7 @@
    color: white;
 }
 .heading-source {
+   font-weight: lighter;
    padding: 10rpx;
    font-size: 25rpx;
    line-height: 30rpx;
@@ -107,6 +108,7 @@
    padding-right: 20rpx;
 }
 .news-source {
+   font-weight: lighter;
    display: flex;
    margin-top: 10rpx;
    font-size: 25rpx;

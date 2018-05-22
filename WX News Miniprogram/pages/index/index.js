@@ -1,7 +1,7 @@
-//index.js
 //获取应用实例
 const app = getApp()
-
+// 导入时间格式转换工具
+const util = require('../../utils/util.js')
 Page({
   data: {
     //新闻分类标题数组, wx:for-item = nlType = {key:, name:}
@@ -48,15 +48,16 @@ Page({
                for (let i = 0; i < newsLength; i += 1) {
                   newsResults.push({
                      newsTitle: results[i].title,
-                     newsDate: results[i].date,
+                     newsDate: util.formatTime(new Date(results[i].date)),
                      newsSource: results[i].source,
-                     imagePath: results[i].firstImage
+                     imagePath: results[i].firstImage,
+                     id: results[i].id
                   })
                }
                this.setData({
                   newsResults: newsResults, //update data
                })
-              // console.log(newsResults)  //testing setData result
+              console.log(newsResults)  //testing setData result
             } else {
                   wx.showToast({
                      title: '加载错误, 请重试',
@@ -95,6 +96,16 @@ Page({
                   duration: 1200
                })
       } 
-   }
+   },
+  switchNewsDetail(event) {
+     wx.navigateTo({
+        url: '/pages/news/news',
+     })
+      wx.showToast({
+         title: '努力加载中',
+         icon: 'loading',
+         duration: 1200
+      })
+  }
 })
 

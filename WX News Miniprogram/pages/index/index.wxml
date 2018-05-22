@@ -1,7 +1,7 @@
 <!--使用自定义导航栏-->
    <view class="topbar">
       <image class="icon" src='/images/news-tencent.png'></image>
-      <view>快讯 | 资讯</view>
+      <view>快读 | 资讯</view>
    </view>
 <!--头部新闻分类 当前激活颜色判断-->
    <view class="news-list">
@@ -15,7 +15,7 @@
 <!--获取新闻列表 热门首图-->
    <view class="frontpage-wrapper"> 
          <view class="hot-icon">热门</view>
-         <view class="frontpage-heading">{{newsResults[0].newsTitle}}
+         <view class="frontpage-heading" bindtap="switchNewsDetail">{{newsResults[0].newsTitle}} 
             <view class="heading-source">{{newsResults[0].newsSource}} {{newsResults[0].newsDate}}
          </view>
          </view>
@@ -25,7 +25,7 @@
    </view>
 <!--获取新闻列表 文章列表-->
 <scroll-view>
-      <view class="news-item" wx:for="{{newsResults}}" wx:if="{{index>0}}">
+      <view class="news-item" wx:for="{{newsResults}}" wx:if="{{index>0}}" bindtap="switchNewsDetail">
             <view class= 'news-title'>{{item.newsTitle}}
                <view class= 'news-source'>{{item.newsSource}}</view>
                <view class= 'news-source'>{{item.newsDate}}</view>
