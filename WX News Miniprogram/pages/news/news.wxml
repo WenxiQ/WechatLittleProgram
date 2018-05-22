@@ -5,6 +5,7 @@
    </view>
 
 <!--新闻标题-->
+
 <view class="title-container">
       <view class="title">{{newsDetail[0].title}}</view>
       <view class="source-container">
@@ -14,6 +15,7 @@
 </view>
 <!--详情列表-->
 <view class="content-container">
-      <view class="news-text">新闻正文 </view>
-      <image class="news-image" src='/images/image-icon.png'></image>
+      <image class="news-image" src="{{newsDetail[0].image}}"></image>
+      <view class="news-text" wx:for="{{newsContent}}"> {{item.ctext}}
+      </view>
 </view>

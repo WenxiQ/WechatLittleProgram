@@ -23,21 +23,33 @@
    font-size: 30rpx;
 }
 .title-container {
-   background-color: gainsboro;
-   block-size: 350rpx;
-   z-index: -1;
+   background-color: white;
+   height: 260rpx;
 }
 .title {
-   padding: 20rpx;
-   position: relative;
-   display: flex;
-   width: 750rpx;
-   height: 200rpx;
-   background-color: greenyellow;
+   font-size: 40rpx;
+   padding: 40rpx;
+   width: 700rpx;
+   height: 130rpx;
+   background-color: white;
 }
 .source-container {
-   padding: 20rpx;
+   padding: 40rpx;
    display: flex;
    justify-content: space-between;
    font-size: 25rpx;
+}
+.content-container {
+   width: 750rpx;
+} 
+.news-image {
+   width: 670rpx;
+   padding: 40rpx;
+}
+.news-text {
+   margin: 30rpx;
+}
+.news-text.strong {
+   font-weight: bolder;
+   color: red;
 }

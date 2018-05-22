@@ -50,14 +50,16 @@ Page({
                      newsTitle: results[i].title,
                      newsDate: util.formatTime(new Date(results[i].date)),
                      newsSource: results[i].source,
-                     imagePath: results[i].firstImage,
+                     //imagePath: results[i].firstImage,
+                     imagePath: !!results[i].firstImage ? results[i].firstImage : '/images/image-icon.png',  
+                                       //检查是否有配图
                      id: results[i].id
                   })
                }
                this.setData({
                   newsResults: newsResults, //update data
                })
-              console.log(newsResults)  //testing setData result
+            //  console.log(newsResults)  //testing setData result
             } else {
                   wx.showToast({
                      title: '加载错误, 请重试',
@@ -88,7 +90,7 @@ Page({
                      activeType: newType
                })
                this.getNews()
-               console.log(newType + ' after reload data') //check news type key
+              // console.log(newType + ' after reload data') //check news type key
                // console.log(event)
                wx.showToast({
                   title: '努力加载中',
