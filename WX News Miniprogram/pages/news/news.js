@@ -44,7 +44,7 @@ onLoad: function (options) {
                      source:results.source,
                      time: util.formatTime(new Date(results.date)), //转换时间格式
                      count: '阅读 ' + results.readCount,
-                     image: results.firstImage,
+                     image: !!results.firstImage ? results.firstImage : '/images/image-icon.png',
                   }) 
                   //get content type and info
                   for (let i = 0; i < contentLength; i += 1) {
