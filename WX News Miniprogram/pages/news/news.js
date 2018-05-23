@@ -37,7 +37,7 @@ Page({
                 let newsDetail = []
                 let newsContent = []
                 if (code == "200" && message == "success") {
-                    //  console.log(results, code, message, contentLength) 
+                    //console.log(results, code, message, contentLength) 检查结果
                     newsDetail.push({
                         title: results.title,
                         source: results.source,
@@ -58,8 +58,8 @@ Page({
                         newsDetail: newsDetail,
                         newsContent: newsContent
                     })
-                    // console.log(newsDetail + ' this is newsDetail')
-                    //  console.log(newsContent[0].ctext  + ' this is newsContent')
+                    // console.log(newsDetail + ' this is newsDetail') 检查结果
+                    //console.log(newsContent + ' this is newsContent')
                     wx.hideLoading({
                         title: '加载中',
                     })

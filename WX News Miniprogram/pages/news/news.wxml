@@ -15,7 +15,11 @@
 
 <!--详情列表-->
 <view class="content-container">
-    <image class="news-image" src="{{newsDetail[0].image}}"></image>
-    <view class="news-text" wx:for="{{newsContent}}"> {{item.ctext}}
+    <view class="news-content" wx:for="{{newsContent}}">
+        <view wx:if="{{item.ctype==='p'}}" class="news-content-p"> {{item.ctext}} </view>
+        <view wx:elif="{{item.ctype==='strong'}}" class="news-content-strong"> {{item.ctext}} </view>
+        <view wx:else>
+            <image class="news-content-img" src='{{item.csrc}}' mode='widthFix' alt='this is a image'></image>
+        </view>
     </view>
 </view>
