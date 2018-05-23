@@ -1,126 +1,134 @@
 .topbar {
-  width:  750rpx;
-  height: 70rpx;
-  display: flex;
-  align-content: center;
-  background-color: #00B2EE;
-  padding-top: 60rpx;
-  padding-left: 30rpx;
-  color: white;
-  font-weight: bolder;
-  font-size: 30rpx;
-  line-height: 42rpx;
+    width: 750rpx;
+    height: 70rpx;
+    display: flex;
+    align-content: center;
+    background-color: #00b2ee;
+    padding-top: 60rpx;
+    padding-left: 30rpx;
+    color: white;
+    font-weight: bolder;
+    font-size: 30rpx;
+    line-height: 42rpx;
 }
+
 .icon {
-  width: 50rpx;
-  height: 50rpx;
-  margin-right: 20rpx;
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 20rpx;
 }
+
 .news-list {
-  background-color: #00B2EE;
-  color: whitesmoke;
-  font-size: 30rpx;
-  line-height: 45rpx;
-  padding-left: 30rpx;
-  padding-right:30rpx;
-  display: flex;
-  flex-wrap: wrap ;
-  justify-content: space-between;
+    background-color: #00b2ee;
+    color: whitesmoke;
+    font-size: 30rpx;
+    line-height: 45rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+
 .nltype {
-   color: white;
-   padding-bottom: 20rpx;
+    color: white;
+    padding-bottom: 20rpx;
 }
+
 .nltype.active {
-   color: yellow;
-   font-weight: bold;
+    color: yellow;
+    font-weight: bold;
 }
 
 .frontpage-wrapper {
-   position: relative;
-   width: 750rpx;
-   height: 450rpx;
+    position: relative;
+    width: 750rpx;
+    height: 450rpx;
 }
+
 .frontpage-bg {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   opacity: 0.3;
-   z-index: -2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    z-index: -2;
 }
+
 .frontpage-image {
-   position: absolute;
-   top: 20rpx;
-   left: 20rpx;
-   width: 95%;
-   height: 92%;
-   opacity: 0.9;
-   z-index: -1;
-   border-radius: 2%;
+    position: absolute;
+    top: 20rpx;
+    left: 20rpx;
+    width: 95%;
+    height: 92%;
+    opacity: 0.9;
+    z-index: -1;
+    border-radius: 2%;
 }
+
 .hot-icon {
-   padding: 10rpx;
-   border-bottom-left-radius: 40%;
-   position: absolute;
-   top: 10rpx;
-   left: 660rpx;
-   font-size: 30rpx;
-   line-height: 42rpx;
-   color: white;
-   background-color: red;
+    padding: 10rpx;
+    border-bottom-left-radius: 40%;
+    position: absolute;
+    top: 10rpx;
+    left: 660rpx;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    color: white;
+    background-color: red;
 }
+
 .frontpage-heading {
-   width: 680rpx;
-   position: absolute;
-   display: table-row;
-   padding-top: 300rpx;
-   padding-left: 40rpx;
-   font-size: 28rpx;
-   font-weight: bold;
-   line-height: 30rpx;
-   color: white;
+    width: 680rpx;
+    position: absolute;
+    display: table-row;
+    padding-top: 300rpx;
+    padding-left: 40rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    line-height: 30rpx;
+    color: white;
 }
+
 .heading-source {
-   font-weight: lighter;
-   padding: 10rpx;
-   font-size: 25rpx;
-   line-height: 30rpx;
-   color:gainsboro;
+    font-weight: lighter;
+    padding: 10rpx;
+    font-size: 25rpx;
+    line-height: 30rpx;
+    color: gainsboro;
 }
+
 .heading-date {
-   font-size: 25rpx;
-   line-height: 30rpx;
-   color:gainsboro;
+    font-size: 25rpx;
+    line-height: 30rpx;
+    color: gainsboro;
 }
+
 .news-item {
-   width: 700rpx;
-   padding: 20rpx;
-   display: flex;
-   justify-content: center;
+    width: 700rpx;
+    padding: 20rpx;
+    display: flex;
+    justify-content: center;
 }
+
 .news-title {
-   width: 450rpx;
-   font-size: 30rpx;
-   font-weight: bold;
-   line-height: 42rpx;
-   padding-right: 20rpx;
+    width: 450rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 42rpx;
+    padding-right: 20rpx;
 }
+
 .news-source {
-   font-weight: lighter;
-   display: flex;
-   margin-top: 10rpx;
-   font-size: 25rpx;
-   line-height: 30rpx;
+    font-weight: lighter;
+    display: flex;
+    margin-top: 10rpx;
+    font-size: 25rpx;
+    line-height: 30rpx;
 }
+
 .news-small-image {
-   width:250rpx;
-   height: 160rpx;
+    width: 250rpx;
+    height: 160rpx;
 }
-
-
-
-
-
-

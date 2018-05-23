@@ -1,21 +1,21 @@
 <!--使用自定义导航栏-->
-   <view class="nav-bar">
-      <image class="back-icon" src='/images/back-arrow.jpg' bindtap="returnToList"></image>
-      <view class = "nav-text">快读 | 资讯</view>
-   </view>
+<view class="nav-bar">
+    <image class="back-icon" src='/images/back-arrow.jpg' bindtap="returnToList"></image>
+    <view class="nav-text">快读 | 资讯</view>
+</view>
 
 <!--新闻标题-->
-
 <view class="title-container">
-      <view class="title">{{newsDetail[0].title}}</view>
-      <view class="source-container">
-            <view class="source">{{newsDetail[0].source}} {{newsDetail[0].time}}  </view>
-            <view>{{newsDetail[0].count}}</view>
-      </view>
+    <view class="title">{{newsDetail[0].title}}</view>
+    <view class="source-container">
+        <view class="source">{{newsDetail[0].source}} {{newsDetail[0].time}} </view>
+        <view>{{newsDetail[0].count}}</view>
+    </view>
 </view>
+
 <!--详情列表-->
 <view class="content-container">
-      <image class="news-image" src="{{newsDetail[0].image}}"></image>
-      <view class="news-text" wx:for="{{newsContent}}"> {{item.ctext}}
-      </view>
+    <image class="news-image" src="{{newsDetail[0].image}}"></image>
+    <view class="news-text" wx:for="{{newsContent}}"> {{item.ctext}}
+    </view>
 </view>
