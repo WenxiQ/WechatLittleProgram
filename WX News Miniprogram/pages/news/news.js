@@ -3,22 +3,22 @@ const util = require('../../utils/util.js')
 
 Page({
     data: {
-        id0: 1523074607642,
+        id: 1523074607642,
         newsDetail: [], //保存新闻详情数据
         newsContent: []
     },
-
+    //接收url传过来的id值，通过setData到page data的id中
     onLoad: function (options) {
-        const id1 = options.id
+        const id = options.id
         this.setData({
-            id0: id1
+            id: id
         })
         //console.log(id1) check imported id and set data for id
         this.getNews()
     },
     //获取API数据，更新数据
     getNews(callback) {
-        const id2 = this.data.id0
+        const id = this.data.id
         //console.log(id2) check id for API input data
         wx.showLoading({
             title: '努力加载中',
@@ -26,7 +26,7 @@ Page({
         //显示加载
         wx.request({
             url: 'https://test-miniprogram.com/api/news/detail',
-            data: { id: id2 },
+            data: { id: id },
             //数据数组成功返回
             success: res => {
                 let results = res.data.result

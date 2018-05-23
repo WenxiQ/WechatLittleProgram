@@ -90,7 +90,6 @@ Page({
             }
         })
     },
-
     //激活当前新闻类别，更新获取新闻数据，显示loading
     switchNewsType(event) {
         const newType = event.currentTarget.dataset.nltype
@@ -107,16 +106,5 @@ Page({
             })
         }
     }
-    /* change switch event to navigator
-    switchNewsDetail(event) {
-        wx.navigateTo({
-            url: '/pages/news/news',
-        })
-        wx.showToast({
-            title: '努力加载中',
-            icon: 'loading',
-            duration: 1200
-        })
-    }*/
 })
 

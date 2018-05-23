@@ -3,6 +3,7 @@
     <image class="icon" src='/images/news-tencent.png'></image>
     <view>快读 | 资讯</view>
 </view>
+
 <!--头部新闻分类 当前激活颜色判断-->
 <view class="news-list">
     <view wx:for="{{newsList}}" class="nltype {{nltype.key === activeType ? 'active' : '' }}" wx:for-item="nltype" wx:key="{{key}}" data-nltype="{{nltype.key}}" bindtap="switchNewsType"> {{nltype.name}}
@@ -10,7 +11,6 @@
 </view>
 
 <!--获取新闻列表 热门首图-->
-<!--删除bindtap="switchNewsDetail",用navigator-->
 <view class="frontpage-wrapper">
     <view class="hot-icon">热门</view>
     <navigator class="frontpage-heading" url='/pages/news/news?id={{newsResults[0].id}}'>{{newsResults[0].newsTitle}}
@@ -21,7 +21,6 @@
 </view>
 
 <!--获取新闻列表 文章列表-->
-<!--删除bindtap="switchNewsDetail",用navigator-->
 <scroll-view>
     <navigator class="news-item" wx:for="{{newsResults}}" wx:if="{{index>0}}" url='/pages/news/news?id={{item.id}}'>
         <view class='news-title'>{{item.newsTitle}}
