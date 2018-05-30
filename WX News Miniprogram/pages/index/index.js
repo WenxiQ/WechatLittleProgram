@@ -6,21 +6,21 @@ Page({
     data: {
         //新闻分类标题数组, wx:for-item = nlType = {key:, name:}
         newsList: [{
-            key: 'top', name: '头条'
+            key: '头条', name: '头条'
         }, {
-            key: 'guoji', name: '国际'
+            key: '新闻', name: '新闻'
         }, {
-            key: 'caijing', name: '财经'
+            key: '财经', name: '财经'
         }, {
-            key: 'keji', name: '科技'
+            key: '科技', name: '科技'
         }, {
-            key: 'yule', name: '娱乐'
+            key: '女性', name: '女性'
         }, {
-            key: 'tiyu', name: '体育'
+            key: '体育', name: '体育'
         }, {
-            key: 'shishang', name: '时尚'
+            key: 'NBA', name: 'NBA'
         }],
-        activeType: 'top',
+        activeType: '头条',
         //appKey: 
         newsResults: [], //保存新闻数据组
     },
@@ -40,30 +40,35 @@ Page({
         //const appkey = this.data.appkey
         //console.log(nltype+'  get news nltype for api input')
         wx.request({
-            url: 'https://v.juhe.cn/toutiao/index',
+            url: 'https://way.jd.com/jisuapi/get',
             data: {
-                type: nltype,
-                key: 'XXXXXXappkey',
+                //type: nltype,
+                channel: nltype,
+                num: 10,
+                start: 0,
+                appkey: '0f00cdf35c041143579fedef5e4ce47',
             },
-            //数据数组成功返回
+            //数据数组成功返回d
             success: res => {
-                let results = res.data.result
-                let newsLength = results.data.length //length of result data array
-                let code =results.stat
-                let message = res.data.reason
+                let results = res.data.result.result.list
+                console.log(results) 
+                let newsLength = results.length //length of result data array
+                let code = res.data.code
+                let message = res.data.msg
                 let newsResults = [] //api news result array
-                //console.log(results, code, message) 
+                console.log(results, code, message) 
                 //testing api results
-                if (code == "1" && message == "成功的返回") {
+                if (code == "10000" && message == "查询成功") {
                     for (let i = 0; i < newsLength; i += 1) {
                         newsResults.push({
-                            newsTitle: results.data[i].title,
-                            newsDate: util.formatTime(new Date(results.data[i].date)),
-                            newsSource: results.data[i].author_name,
+                            newsTitle: results[i].title,
+                            newsDate: util.formatTime(new Date(results[i].time)),
+                            newsSource: results[i].src,
                             //imagePath: results[i].firstImage,
-                            imagePath: !!results.data[i].thumbnail_pic_s ? results.data[i].thumbnail_pic_s : '/images/image-icon.png',
+                            imagePath: !!results[i].pic ? results[i].pic : '/images/news-image.jpg',
                             //检查是否有配图
-                            id: results.data[i].url
+                            id: results[i].url,
+                            content: results[i].content,
                         })
                     }
                     this.setData({

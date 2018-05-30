@@ -13,7 +13,7 @@
 <!--获取新闻列表 热门首图-->
 <view class="frontpage-wrapper">
     <view class="hot-icon">热门</view>
-    <navigator class="frontpage-heading" url='/pages/news/news?id={{newsResults[0].id}}'>{{newsResults[0].newsTitle}}
+    <navigator class="frontpage-heading" url='/pages/news/news?id={{newsResults[0].newsTitle}}'>{{newsResults[0].newsTitle}}
         <view class="heading-source">{{newsResults[0].newsSource}} {{newsResults[0].newsDate}} </view>
     </navigator>
     <image class="frontpage-image" src='{{newsResults[0].imagePath}}' mode="scaleToFill"></image>
@@ -22,7 +22,8 @@
 
 <!--获取新闻列表 文章列表-->
 <scroll-view>
-    <navigator class="news-item" wx:for="{{newsResults}}" wx:if="{{index>0}}" url='/pages/news/news?id={{item.id}}'>
+    <navigator class="news-item" wx:for="{{newsResults}}" wx:if="{{index>0}}" 
+                    url='/pages/news/news?id={{item.newsTitle}}'>
         <view class='news-title'>{{item.newsTitle}}
             <view class='news-source'>{{item.newsSource}}</view>
             <view class='news-source'>{{item.newsDate}}</view>

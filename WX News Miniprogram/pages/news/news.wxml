@@ -6,7 +6,7 @@
 
 <!--新闻标题-->
 <view class="title-container">
-    <view class="title">{{newsDetail[0].title}}</view>
+    <view class="title">{{title}}</view>
     <view class="source-container">
         <view class="source">{{newsDetail[0].source}} {{newsDetail[0].time}} </view>
         <view>{{newsDetail[0].count}}</view>
