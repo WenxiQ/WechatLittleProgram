@@ -1,6 +1,6 @@
 <!--使用自定义导航栏-->
 <view class="topbar">
-    <image class="icon" src='/images/news-tencent.png'></image>
+    <image class="icon" src='/images/news-1.png'></image>
     <view>快读 | 资讯</view>
 </view>
 

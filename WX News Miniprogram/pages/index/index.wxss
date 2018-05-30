@@ -8,8 +8,8 @@
     padding-left: 30rpx;
     color: white;
     font-weight: bolder;
-    font-size: 30rpx;
-    line-height: 42rpx;
+    font-size: 35rpx;
+    line-height: 50rpx;
 }
 
 .icon {

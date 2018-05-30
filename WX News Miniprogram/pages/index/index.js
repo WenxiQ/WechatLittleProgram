@@ -6,21 +6,22 @@ Page({
     data: {
         //新闻分类标题数组, wx:for-item = nlType = {key:, name:}
         newsList: [{
-            key: 'gn', name: '国内'
+            key: 'top', name: '头条'
         }, {
-            key: 'gj', name: '国际'
+            key: 'guoji', name: '国际'
         }, {
-            key: 'cj', name: '财经'
+            key: 'caijing', name: '财经'
         }, {
-            key: 'yl', name: '娱乐'
+            key: 'keji', name: '科技'
         }, {
-            key: 'js', name: '军事'
+            key: 'yule', name: '娱乐'
         }, {
-            key: 'ty', name: '体育'
+            key: 'tiyu', name: '体育'
         }, {
-            key: 'other', name: '其他'
+            key: 'shishang', name: '时尚'
         }],
-        activeType: 'gn',
+        activeType: 'top',
+        //appKey: 
         newsResults: [], //保存新闻数据组
     },
     //启动
@@ -36,31 +37,33 @@ Page({
     //获取API数据，更新数据
     getNews(callback) {
         const nltype = this.data.activeType
+        //const appkey = this.data.appkey
         //console.log(nltype+'  get news nltype for api input')
         wx.request({
-            url: 'https://test-miniprogram.com/api/news/list',
+            url: 'https://v.juhe.cn/toutiao/index',
             data: {
-                type: nltype
+                type: nltype,
+                key: 'XXXXXXappkey',
             },
             //数据数组成功返回
             success: res => {
                 let results = res.data.result
-                let newsLength = results.length //length of result data array
-                let code = res.data.code
-                let message = res.data.message
+                let newsLength = results.data.length //length of result data array
+                let code =results.stat
+                let message = res.data.reason
                 let newsResults = [] //api news result array
-                // console.log(results, code, message) 
+                //console.log(results, code, message) 
                 //testing api results
-                if (code == "200" && message == "success") {
+                if (code == "1" && message == "成功的返回") {
                     for (let i = 0; i < newsLength; i += 1) {
                         newsResults.push({
-                            newsTitle: results[i].title,
-                            newsDate: util.formatTime(new Date(results[i].date)),
-                            newsSource: results[i].source,
+                            newsTitle: results.data[i].title,
+                            newsDate: util.formatTime(new Date(results.data[i].date)),
+                            newsSource: results.data[i].author_name,
                             //imagePath: results[i].firstImage,
-                            imagePath: !!results[i].firstImage ? results[i].firstImage : '/images/image-icon.png',
+                            imagePath: !!results.data[i].thumbnail_pic_s ? results.data[i].thumbnail_pic_s : '/images/image-icon.png',
                             //检查是否有配图
-                            id: results[i].id
+                            id: results.data[i].url
                         })
                     }
                     this.setData({
