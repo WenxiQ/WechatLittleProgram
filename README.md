@@ -1,2 +1,2 @@
-# WechatLittleProgram
+# WechatMiniProgram
 Weixin Program Development
